@@ -20,13 +20,18 @@ let startBtn = document.getElementById('start'),
     monthValue = document.querySelector('.month-value'),
     dayValue = document.querySelector('.day-value');
 
-
 let money, time;
+
+expensesBtn.disabled = true;
+optionalExpensesBtn.disabled = true;
+countBtn.disabled = true;
 
 startBtn.addEventListener('click', function(){
     time = prompt("Введите дату в формате YYYY-MM-DD","2020-01-28");
     money = +prompt("Ваш бюджет на месяц?","9000");
-    
+    expensesBtn.disabled = false;
+    optionalExpensesBtn.disabled = false;
+    countBtn.disabled = false;
     while(isNaN(money) || money == "" || money == null){
         money = +prompt("Ваш бюджет на месяц?","9000");
     }
@@ -133,5 +138,3 @@ let appData = {
     expenses: {},
     savings: false
 }
-
-
